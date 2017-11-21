@@ -8,5 +8,13 @@
 
 <ion-content padding>
   <h1>Welcome to Our App</h1>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+  </ion-list>
+  
   <button color="sunny" ion-button (click)="btnClick()">Click Me</button>
 </ion-content>

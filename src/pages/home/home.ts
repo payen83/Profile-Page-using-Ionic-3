@@ -9,7 +9,7 @@ export class HomePage {
 
   name: string;
   constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
-    this.name = 'Ferdy';
+    //this.name = 'Ferdy';
   }
 
   btnClick(){
