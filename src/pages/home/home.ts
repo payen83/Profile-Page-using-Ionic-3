@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +7,19 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  name: string;
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
+    this.name = 'Ferdy';
+  }
 
+  btnClick(){
+    //alert('Hello!');
+    let alert = this.alertCtrl.create({
+      title: 'Global Launch',
+      subTitle: 'Hello ' + this.name,
+      buttons: ['Done!']
+    });
+    alert.present();
   }
 
 }
