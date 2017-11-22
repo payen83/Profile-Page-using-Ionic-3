@@ -1,0 +1,47 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  
+  <form #formCtrl="ngForm">
+      <div align="center" *ngIf="formCtrl.form.valid">
+          <img class="profile-image" src="assets/imgs/profile.jpg">
+          <h4>{{person.name}}, {{person.company}}</h4>
+          <h5>{{age}} years old</h5>
+      </div>
+  <ion-list>
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="person.name" name="name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Company</ion-label>
+        <ion-select [(ngModel)]="person.company" name="company" required>
+          <ion-option value="Maybank">Maybank</ion-option>
+          <ion-option value="CIMB">CIMB</ion-option>
+          <ion-option value="Public Bank">Public Bank</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label >Birth Date</ion-label>
+          <ion-datetime required name="birthdate" displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="dob" [ngModelOptions]="{standalone:true}"></ion-datetime>
+      </ion-item>
+      
+  </ion-list>
+  <button color="secondary" [disabled]="!formCtrl.form.valid" ion-button block (click)="save()">Save</button>
+  <button color="danger" ion-button block (click)="reset()">Reset</button>
+</form>
+</ion-content>
