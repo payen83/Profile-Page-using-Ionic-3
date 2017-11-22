@@ -18,7 +18,9 @@
   
   <form #formCtrl="ngForm">
       <div align="center" *ngIf="formCtrl.form.valid">
-          <img class="profile-image" src="assets/imgs/profile.jpg">
+          
+        <h1> Profile</h1>
+        <img class="profile-image" src="assets/imgs/profile.jpg">
           <h4>{{person.name}}, {{person.company}}</h4>
           <h5>{{age}} years old</h5>
       </div>
